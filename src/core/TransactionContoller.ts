@@ -1,6 +1,10 @@
 export class TransactionController {
-  state = {};
-  startTransaction() {}
-
+  state = {
+    latestTxHash: "",
+  };
   constructor() {}
+
+  startTransaction() {
+    console.log("TransactionController.startTransaction");
+  }
 }

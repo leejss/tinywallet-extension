@@ -13,9 +13,16 @@ export class Engine {
   controllers!: EngineControllers;
 
   constructor() {
+    const transactionController = new TransactionController();
+    const assetController = new AssetController();
     this.controllers = {
-      transactionController: new TransactionController(),
-      assetController: new AssetController(),
+      transactionController,
+      assetController,
+    };
+
+    this.state = {
+      transactionController: transactionController.state,
+      assetController: assetController.state,
     };
   }
 }

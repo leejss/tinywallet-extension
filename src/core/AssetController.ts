@@ -1,3 +1,11 @@
 export class AssetController {
-  state = {};
+  state = {
+    balance: 0,
+  };
+
+  constructor() {}
+
+  async getAssetBalance() {
+    console.log("AssetController.getAssetBalance");
+  }
 }

@@ -14,4 +14,6 @@ const engine = new Engine();
     proxyEngine: proxyEngine,
   });
   apiBridge.ready();
+
+  console.log("BackgroundScript ready");
 })();
