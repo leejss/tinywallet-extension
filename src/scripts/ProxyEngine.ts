@@ -37,6 +37,8 @@ export class ProxyEngine {
     const subscription = portObservable.subscribe(async (message) => {
       const { controller, methodName, payload, id } = message;
 
+      console.log("ProxyEngine: message", message);
+
       const result = await this.callEngine({
         controllerKey: controller,
         methodName,

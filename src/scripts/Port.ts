@@ -16,6 +16,8 @@ export default class Port {
 
     this.name = connectInfo.name;
     this.callback = opts?.onConnect ?? (() => {});
+
+    // createPort means that starting a new connection
     this.chromePort = this.createPort();
   }
 

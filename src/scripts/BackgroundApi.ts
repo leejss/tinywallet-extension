@@ -1,6 +1,7 @@
 import { Observable, filter, fromEventPattern, lastValueFrom, take } from "rxjs";
 import Port from "./Port";
 import { v4 as uuid } from "uuid";
+import { PORT_PROXY_ENGINE } from "./constants";
 export type BackgroundResponse<T = never> = {
   id: string;
   error: null | { code: number; msg: string };
@@ -16,8 +17,9 @@ export default class BackgroundApi {
   }
 
   private connect() {
+    console.log("BackgroundApi:connect");
     this.port = new Port(
-      { name: "BG" },
+      { name: PORT_PROXY_ENGINE },
       {
         onConnect: (port) => {
           this.initPortObservable(port);

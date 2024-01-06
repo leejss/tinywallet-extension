@@ -16,6 +16,8 @@ export class ApiBridge {
         console.warn(`ApiBridge: port name ${port.name} does not match ${this.portName}`);
         return;
       }
+
+      console.log("ApiBridge: port connected");
       this.proxyEngine.listen(port);
     });
   }
